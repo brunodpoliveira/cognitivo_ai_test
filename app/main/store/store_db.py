@@ -1,4 +1,8 @@
+import json
+
 import pandas as pd
+from flask import flash, request, render_template
+from sqlalchemy.types import Integer, Text, String, DateTime
 
 
 def get_csv():
@@ -44,11 +48,10 @@ class storeDb:
     @classmethod
     def news_rating_count_tot(cls):
         df = pd.read_csv('static/AppleStore.csv')
-        p = df[(df['prime_genre'] == "News") & df['rating_count_tot']]
+        p = df[(df['prime_genre'] == "Book") & df['rating_count_tot']]
         p3 = p[p['rating_count_tot'] == p['rating_count_tot'].max()]
-        print(p3)
+        # print(p3)
         p_json = p3.to_json()
-        # TODO write to csv, json
         return p_json
 
     @classmethod
@@ -56,20 +59,41 @@ class storeDb:
         df = pd.read_csv('static/AppleStore.csv')
         p = df[(df['prime_genre'] == "Music") | (df['prime_genre'] == "Book") & df['rating_count_tot']]
         p3 = p.nlargest(10, ['rating_count_tot'])
-        print(p3)
         p_json = p3.to_json()
-        # TODO write to csv, json
         return p_json
 
     @classmethod
     def top_10_music_book_citation(cls):
         df = pd.read_csv('static/AppleStore.csv')
         p = df[(df['prime_genre'] == "Music") | (df['prime_genre'] == "Book") & df['rating_count_tot']]
-        p3 = p[p['rating_count_tot'] == p['rating_count_tot'].max()]
-        print(p)
-        print(p3)
+        # TODO citation
+        p3 = p.nlargest(10, ['rating_count_tot'])
+        p4 = ""
+        # print(p3)
         p_json = p3.to_json()
-        #TODO write to csv, json
         return p_json
 
+    def write_to_csv_and_json(cls):
+        from app import eng_exp
+        df = pd.read_csv('static/AppleStore.csv')
+        p = df[(df['prime_genre'] == "Music") | (df['prime_genre'] == "Book") & df['rating_count_tot']]
+        p3 = p.nlargest(10, ['rating_count_tot'])
+        # TODO n_citacoes
+        d = {'id': p3['id'], 'track_name': p3['track_name'],
+             'n_citacoes': "", 'size_bytes': p3['size_bytes'], 'price': p3['price'],
+             'prime_genre': p3['prime_genre']}
+        df2 = pd.DataFrame(data=d)
+        df2.to_json('static/top_10_music_book.json', orient='records', lines=True)
+        df2.to_csv('static/top_10_music_book.csv', encoding='utf-8', index=False)
+        df2.to_sql('static/local_db.db', eng_exp, if_exists='replace', index=False, chunksize=500,
+                   dtype={
+                       "track_name": Text,
+                       "n_citacoes": Integer,
+                       "size_bytes": Integer,
+                       "price": Integer,
+                       "prime_genre": Text,
+                   }
+                   )
 
+        flash('Record was successfully added')
+        return "Arquivos gerados com sucesso. Verificar pasta static/"

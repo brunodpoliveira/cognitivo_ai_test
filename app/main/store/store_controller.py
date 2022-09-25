@@ -1,20 +1,8 @@
-from flask_restplus import Resource, Namespace, fields
+from flask_restplus import Resource, Namespace
 from app.main.store.store_db import storeDb
-from flask import Flask, request, send_file,render_template
-import os
-import csv
 import pandas as pd
 
 api = Namespace('Store', description='Maintenance of store data')
-modelo = api.model('StoreModel', {
-    'id': fields.Integer,
-    'track_name': fields.String,
-    'n_citacoes': fields.Integer,
-    'size_bytes': fields.Integer,
-    'price': fields.Integer,
-    'prime_genre': fields.String,
-
-})
 
 
 @api.route('/process_csv')
@@ -32,23 +20,18 @@ class rating_count_tot(Resource):
 
 
 @api.route('/top_10_music_book_rating')
-class rating_count_tot(Resource):
+class top_10_music_book_rating(Resource):
     def get(self):
         return storeDb.top_10_music_book_rating(), 200
 
-"""
+
 @api.route('/top_10_music_book_citation')
-class rating_count_tot(Resource):
+class top_10_music_book_citation(Resource):
     def get(self):
         return storeDb.top_10_music_book_citation(), 200
-"""
 
-@api.route('/')
-class storeController(Resource):
-    @api.response(200, "success")
-    def get(self):
-        return storeDb.obter(), 200
 
-    @api.expect(modelo)
+@api.route('/write_to_csv_and_json')
+class write_to_csv_and_json(Resource):
     def post(self):
-        return storeDb.adicionar(request.json), 201
+        return storeDb.write_to_csv_and_json(self), 200

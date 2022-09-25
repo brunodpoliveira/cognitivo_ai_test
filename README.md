@@ -7,18 +7,21 @@ maior quantidade de avaliações rating_count_tot. (DONE)
 Music e Book que possuem a maior quantidade de
 avaliações no arquivo csv apple_store. (DONE)
 
---> fazer um loop for --> 10 items com o prime_genre music e outro prime_genre book
-
 3. Após encontrar a aplicação do tipo News utilize a sua
-API , para identiﬁcar quais das 10 aplicações do tipo
-Music e Book, possuem o maior número de citações
-nessa API.
+API para identiﬁcar quais das 10 aplicações do tipo
+Music e Book possuem o maior número de citações
+nessa API.(TODO)
 
 ENTREGÁVEL
-O output esperado é a criação de um CSV, um JSON e uma
-base de dados local com as respectivas colunas: id,
+O output esperado é a criação de um CSV(done), um JSON(done) e uma
+base de dados local(DONE) com as respectivas colunas: id,
 track_name, n_citacoes, size_bytes, price, prime_genre. Os
 dados relativos às Aplicações estão disponíveis no arquivo
 abaixo. Arquivo de dado
 
+Suba o servidor usando esse comando:
+```
 python run.py
+```
+
+Os entregáveis se encontram na pasta static/
