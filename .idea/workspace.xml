@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77f3af7d-4b3d-45dc-8f2b-8b1cde405a32" name="Tarefas 1 e 2 concluidas" comment="Tarefas 1 e 2 concluidas">
+    <list default="true" id="77f3af7d-4b3d-45dc-8f2b-8b1cde405a32" name="Tarefas 4 concluida" comment="Tarefas 4 concluida">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main/store/store_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/store/store_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main/store/store_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/store/store_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/local_db.db" beforeDir="false" afterPath="$PROJECT_DIR$/static/local_db.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/top_10_music_book.csv" beforeDir="false" afterPath="$PROJECT_DIR$/static/top_10_music_book.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/top_10_music_book.json" beforeDir="false" afterPath="$PROJECT_DIR$/static/top_10_music_book.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +47,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TODO_SCOPE": "All Places",
     "last_opened_file_path": "/home/bruno/MEGA/code/twittter-sentiment-analysis",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
@@ -74,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664104287467</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Tarefas 4 concluida">
+      <created>1664137533094</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664137533094</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -90,6 +97,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Tarefas 1 e 2 concluidas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tarefas 1 e 2 concluidas" />
+    <MESSAGE value="Tarefas 4 concluida" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tarefas 4 concluida" />
   </component>
 </project>
