@@ -10,12 +10,12 @@ avaliações no arquivo csv apple_store. (DONE)
 3. Após encontrar a aplicação do tipo News utilize a sua
 API para identiﬁcar quais das 10 aplicações do tipo
 Music e Book possuem o maior número de citações
-nessa API.(TODO)
+nessa API.(Done)
 
 ENTREGÁVEL
 O output esperado é a criação de um CSV(done), um JSON(done) e uma
 base de dados local(DONE) com as respectivas colunas: id,
-track_name, n_citacoes, size_bytes, price, prime_genre. Os
+track_name, n_citacoes, size_bytes, price, prime_genre (done). Os
 dados relativos às Aplicações estão disponíveis no arquivo
 abaixo. Arquivo de dado
 
